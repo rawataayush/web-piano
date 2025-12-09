@@ -20,84 +20,59 @@ const audioI = new Audio('assets/audio/A7.mp3')
 const audioO = new Audio('assets/audio/C1.mp3')
 const audioP = new Audio('assets/audio/C2.mp3')
 
-keyQ.addEventListener('click', () => {
-    audioQ.currentTime = 0;
-    audioQ.play()
+const audioList = [audioQ, audioW, audioE, audioR, audioT, audioY, audioU, audioI, audioO, audioP]
+const keyList = [keyQ, keyW, keyE, keyR, keyT, keyY, keyU, keyI, keyO, keyP]
 
-    setTimeout(() => {
-        audioQ.pause();
-    }, 1000);
+keyList.forEach((key) => {
+    key.addEventListener('click', () => {
+        audioList[keyList.indexOf(key)].currentTime = 0;
+        audioList[keyList.indexOf(key)].play()
+    })
 })
 
-keyW.addEventListener('click', () => {
-    audioW.currentTime = 0;
-    audioW.play()
-    setTimeout(() => {
-        audioW.pause();
-    }, 1000);
-})
-
-keyE.addEventListener('click', () => {
-    audioE.currentTime = 0;
-    audioE.play()
-    setTimeout(() => {
-        audioE.pause();
-    }, 1000);
-})
-
-keyR.addEventListener('click', () => {
-    audioR.currentTime = 0;
-    audioR.play()
-    setTimeout(() => {
-        audioR.pause();
-    }, 1000);
-})
-
-keyT.addEventListener('click', () => {
-    audioT.currentTime = 0;
-    audioT.play()
-    setTimeout(() => {
-        audioT.pause();
-    }, 1000);
-})
-
-keyY.addEventListener('click', () => {
-    audioY.currentTime = 0;
-    audioY.play()
-
-    setTimeout(() => {
-        audioY.pause();
-    }, 1000);
-})
-
-keyU.addEventListener('click', () => {
-    audioU.currentTime = 0;
-    audioU.play()
-    setTimeout(() => {
-        audioU.pause();
-    }, 1000);
-})
-
-keyI.addEventListener('click', () => {
-    audioI.currentTime = 0;
-    audioI.play()
-    setTimeout(() => {
-        audioI.pause();
-    }, 1000);
-})
-
-keyO.addEventListener('click', () => {
-    audioO.currentTime = 0;
-    audioO.play()
-    setTimeout(() => {
-        audioO.pause();
-    }, 1000);
-})
-
-keyP.addEventListener('click', () => {
-    audioP.currentTime = 0;
-    audioP.play()
-    setTimeout(() => {
-        audioP.pause();
-    }, 1000);
+document.addEventListener('keydown', (event) => {
+    switch(event.key.toLowerCase()) {
+        case 'q':
+            audioQ.currentTime = 0;
+            audioQ.play();
+            break;
+        case 'w':
+            audioW.currentTime = 0;
+            audioW.play();
+            break; 
+        case 'e':
+            audioE.currentTime = 0;
+            audioE.play();
+            break;
+        case 'r':
+            audioR.currentTime = 0;
+            audioR.play();
+            break;
+        case 't':
+            audioT.currentTime = 0;
+            audioT.play();
+            break;
+        case 'y':
+            audioY.currentTime = 0;
+            audioY.play();
+            break;
+        case 'u':
+            audioU.currentTime = 0;
+            audioU.play();
+            break;
+        case 'i':
+            audioI.currentTime = 0;
+            audioI.play();
+            break;
+        case 'o':
+            audioO.currentTime = 0;
+            audioO.play();
+            break;
+        case 'p':
+            audioP.currentTime = 0;
+            audioP.play();
+            break;
+        default:
+            break;
+    }
 })
